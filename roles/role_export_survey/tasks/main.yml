@@ -1,0 +1,25 @@
+---
+# tasks file for role_import_survey
+
+- name: role_export_survey - get survey questions from job template
+  ansible.builtin.uri:
+    url: 'https://{{ controller_host }}/api/v2/job_templates/{{ job_template_name }}/survey_spec'
+    user: '{{ controller_username }}'
+    password: '{{ controller_password }}'
+    force_basic_auth: true
+    method: GET
+    validate_certs: '{{ controller_validate_certs | default( false ) }}'
+    status_code: 200
+  register: results
+
+- name: role_export_survey - create survey questions specification file
+  ansible.builtin.copy:
+    dest: '{{ survey_spec_file }}'
+    mode: '0644'
+    content: |
+      name: ""
+      description: ""
+      spec:
+      {{ results.json.spec | to_nice_yaml }}
+
+...

@@ -1,0 +1,31 @@
+galaxy_info:
+  role_name: 'role_import_survey'
+  author: Scott Parker
+  description: import a survey spec into controller job template
+  company: ''
+  license: 'GPL-3.0-or-later'
+  min_ansible_version: '>=2.9'
+  platforms:
+    - name: "EL"
+      versions:
+        - all
+  galaxy_tags:
+    - ansible
+    - automation
+    - automation_platform
+    - awx
+    - cloud
+    - collection
+    - controller
+    - controller_configuration
+    - dynamic
+    - infrastructure
+    - job
+    - templates
+
+collections:
+  - awx.awx
+
+dependencies: []
+
+...

@@ -1,0 +1,11 @@
+---
+# defaults file for role_export_survey
+
+# survey_job_template_name: ''            # enter name of job template
+# controller_host: ''                     # enter hostname of Ansible Controller'
+# controller_username: ''                 # enter username to export'
+# controller_password: ''                 # enter password of username to export'
+# survey_spec_download_file: ''           # example, survey_questions_download.yml
+# survey_spec_upload_file: ''             # example, survey_questions_upload.yml
+
+...

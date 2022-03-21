@@ -1,0 +1,27 @@
+---
+# tasks file for role_import_survey
+
+- name: role_import_survey - load survey spec data from file
+  ansible.builtin.include_vars:
+    file: '{{ survey_spec_file }}'
+    name: survey_spec
+  when: survey_spec_in_file | bool
+
+- name: role_import_survey - get survey_spec for job_template
+  awx.awx.job_template:
+    name: '{{ job_template_name }}'
+    controller_host: '{{ controller_host | default( omit ) }}'
+    controller_username: '{{ controller_username | default( omit ) }}'
+    controller_password: '{{ controller_password | default( omit ) }}'
+    validate_certs: '{{ controller_validate_certs | default( false ) }}'
+    survey_enabled: '{{ controller_survey_enabled | default( true ) }}'
+    survey_spec: '{{ survey_spec | from_yaml }}'
+  register: results
+  no_log: True
+
+- name: role_import_survey - assert if there was a change
+  assert:
+    that:
+      - 'results is changed'
+
+...
