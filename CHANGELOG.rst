@@ -4,16 +4,24 @@ gearboxscott.dynamic_job_template_surveys Release Notes
 
 .. contents:: Topics
 
-v0.2.0
+v0.3.0
 ======
 
-Major Changes
--------------
+Changes
+-------
+
+- Fixing documentation and repository links in galaxy.yml
+
+Bugfixes
+--------
 
 - None
 
-Minor Changes
--------------
+v0.2.0
+======
+
+Changes
+-------
 
 - Fixing the code blocks in READHE.md's.
 
@@ -26,15 +34,10 @@ Bugfixes
 v0.1.0
 ======
 
-Major Changes
--------------
+Changes
+-------
 
 - initial Release
-
-Minor Changes
--------------
-
-- added README's
 
 Bugfixes
 --------
